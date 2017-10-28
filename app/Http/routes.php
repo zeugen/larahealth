@@ -18,3 +18,10 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+//admin routes - used resource
+Route::resource('admin/users', 'AdminUsersController');
+
+//test admin route
+Route::get('/admin/',function(){
+  return view('admin.index');
+});
