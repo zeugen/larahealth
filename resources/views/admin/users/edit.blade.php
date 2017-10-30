@@ -3,6 +3,7 @@
 @section('body-content')
   <section class="content-header">
     <h1>Edit User</h1>
+    
   </section>
   {{-- main content --}}
   <section class="content">
@@ -59,10 +60,26 @@
                   {!! Form::label('password', 'Password: ') !!}
                   {!! Form::password('password',  ['class'=>"form-control"]) !!}
               </div>
-              <div class="form-group">
-                {!! Form::submit('Edit User', ['class'=> 'btn btn-primary']) !!}
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    {!! Form::submit('Update User', ['class'=> 'btn-block btn-primary']) !!}
+                  </div>
+                </div>
+                {!!Form::close() !!}
+                <div class="col-sm-6">
+                  {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminUsersController@destroy', $user->id   ]]) !!}
+
+                  <div class="form-group">
+                    {!! Form::submit('Delete User', ['class'=> 'btn-block  btn-danger']) !!}
+                  </div>
+
+
+                  {!! Form::close() !!}
+                </div>
               </div>
-            {!!Form::close() !!}
+
+
             @include('partials._formErrors')
           </div>
           </div>

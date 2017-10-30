@@ -2,8 +2,31 @@
 
 @section('body-content')
   <section class="content-header">
+
     <h1>Users <small>All users registered in the system</small></h1>
+
   </section>
+  {{-- //for any message to be triggered by our session handler --}}
+  @if (Session::has('deleted_user'))
+    <div class="row">
+      <div class="col-md-8">
+        <div class="box box-default">
+          <div class="box-header with-border">
+            <i class="fa fa-warning"></i>
+            <h3 class="box-title">Notification</h3>
+          </div>
+          {{-- .box-header --}}
+          <div class="box-body">
+            <div class="callout callout-success">
+              <h4>{{session('deleted_user')}}</h4>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  @endif
 
   {{-- Main Content --}}
   <section class="content">
@@ -16,6 +39,11 @@
         <div class="box-header">
           <div class="box-title">
             Users Table
+          </div>
+          <div class="callout callout-info">
+            <h4>Edit User</h4>
+
+            <p>Click on a users name to edit their inforamtion.</p>
           </div>
         </div>
         {{-- end box header --}}

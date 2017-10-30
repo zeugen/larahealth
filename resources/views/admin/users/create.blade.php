@@ -14,6 +14,8 @@
             <h3 class="box-title">
               Create a new user
             </h3>
+
+          </div>
           {{-- </div>box body --}}
           <div class="box-body">
             {!! Form::open(['method'=>"POST", "action"=>"AdminUsersController@store", 'files'=>true]) !!}
@@ -53,7 +55,7 @@
             {!!Form::close() !!}
             @include('partials._formErrors')
           </div>
-          </div>
+
 
         </div>
       </div>

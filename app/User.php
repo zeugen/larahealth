@@ -35,4 +35,12 @@ class User extends Authenticatable
        return $this->belongsTo('App\Photo');
     }
 
+    //isAdmin function here checks whether admin is logged in you can do check role too
+    public function isAdmin(){
+      if($this->role->name === "administrator" && $this->is_active  === 1){
+        return true;
+      }
+      return false;
+    }
+
 }
