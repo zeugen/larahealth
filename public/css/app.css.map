@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAEA;EACE,0BAA0B;EAC1B,WAAW,EACZ","file":"app.css","sourcesContent":["//import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\n\nh1{\n  text-transform: uppercase;\n  color: red;\n}\n"]}
+{"version":3,"sources":["partials/_layout.scss"],"names":[],"mappings":"AAAA;EACE,iBAAiB;EACjB,kBAAkB,EACnB;;AACD;EACE,iBAAiB;EACjB,kBAAkB,EACnB","file":"app.css","sourcesContent":[".img-th-200{\r\n  max-width: 200px;\r\n  max-height: 200px;\r\n}\r\n.img-th-100{\r\n  max-width: 125px;\r\n  max-height: 125px;\r\n}\r\n"]}
