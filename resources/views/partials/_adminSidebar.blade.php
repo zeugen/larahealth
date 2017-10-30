@@ -60,7 +60,7 @@
     </a>
     </li>
     <li class="treeview">
-      <a href="#">
+      <a href="{{route('admin.users.index')}}">
       <i class="fa fa-users"></i>
       <span>Users</span>
       <span class="pull-right-container">
@@ -68,7 +68,7 @@
       </span>
     </a>
       <ul class="treeview-menu">
-        <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+        <li><a href="{{route('admin.users.create')}}"><i class="fa fa-circle-o"></i> Create</a></li>
         <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
 
       </ul>
