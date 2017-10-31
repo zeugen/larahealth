@@ -49,7 +49,7 @@
       <ul class="treeview-menu">
         <li><a href="{{route('admin.users.index')}}"><i class="fa fa-circle-o"></i> Users</a></li>
         <li><a href="{{route('admin.users.create')}}"><i class="fa fa-circle-o"></i> Create</a></li>
-        
+
 
       </ul>
     </li>
@@ -62,8 +62,8 @@
       </span>
     </a>
       <ul class="treeview-menu">
-        <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> All Posts</a></li>
-        <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Create Post</a></li>
+        <li><a href="{{route('admin.posts.index')}}"><i class="fa fa-circle-o"></i> All Posts</a></li>
+        <li><a href="{{route('admin.posts.create')}}"><i class="fa fa-circle-o"></i> Create Post</a></li>
         <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
 
       </ul>

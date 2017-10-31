@@ -43,7 +43,7 @@
           <div class="callout callout-info">
             <h4>Edit User</h4>
 
-            <p>Click on a users name to edit their inforamtion.</p>
+            <p>Click on a users name to edit their information.</p>
           </div>
         </div>
         {{-- end box header --}}
