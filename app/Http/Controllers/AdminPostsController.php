@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
-
+use App\Post;
+use App\Photo;
 use App\Http\Requests;
+use App\Http\Requests\PostsCreateRequest;
 
 class AdminPostsController extends Controller
 {
@@ -16,7 +18,8 @@ class AdminPostsController extends Controller
     public function index()
     {
         //
-        return view('admin.posts.index');
+        $posts = Post::all();
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -36,9 +39,20 @@ class AdminPostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostsCreateRequest $request)
     {
-        //
+        //since the post belongs to a certain user, take the current logged in user and asign the post to him
+        $input = $request->all();
+        $user = Auth::user(); //pull in looged in user
+        if($file = $request-> file('photo_id')){
+           $name = time().$file->getClientOriginalName();
+           $file->move('img',$name);
+           $photo= Photo::create(['file'=>$name]);
+           $input['photo_id'] = $photo->id;
+        }
+      //  return $request ->all();
+      $user->posts()->create($input);
+      return redirect('/admin/posts');
     }
 
     /**
