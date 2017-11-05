@@ -8,12 +8,12 @@
   <section class="content">
     <div class="row">
       {{-- edit/ add categories --}}
-      <div class="col-xs-4">
+      <div class="col-xs-7 col-md-offset-1">
         <div class="box box-primary">
           <div class="box-header with-border">
 
               <h3 class="box-title">
-                Edit a  Category
+                Edit   Category
               </h3>
 
           </div>
@@ -25,12 +25,19 @@
               {!!Form::text('name', null, ['class'=>"form-control"]) !!}
             </div>
             <div class="form-group">
-              {!! Form::submit('Update Category', ['class'=> 'btn btn-default  btn-primary']) !!}
+              {!! Form::submit('Update Category', ['class'=> 'btn btn-block  btn-primary']) !!}
+            </div>
+            {!! Form::close() !!}
+            {!! Form::open( ["method"=>"DELETE", 'action'=> ["AdminCategoriesController@destroy", $category->id]]) !!}
+
+            <div class="form-group">
+              {!! Form::submit('Delete Category', ['class'=> 'btn btn-block  btn-danger']) !!}
             </div>
             {!! Form::close() !!}
           </div>
         </div>
       </div>
+
 
     </div>
   </section>

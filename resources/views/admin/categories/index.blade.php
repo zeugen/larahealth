@@ -53,12 +53,9 @@
                       <td>{{$category->id}}</td>
                       <td>{{$category->name}}</td>
                        <td>{{$category->created_at ? $category->created_at->diffForHumans():"no date"}}</td>
-                      {{--<td>{{$category->updated_at->diffForHumans()}}</td> --}}
+                      <td><a href="{{route("admin.categories.edit", $category->id)}}">Edit /delete</a></td>
                     </tr>
                   @endforeach
-                @else{
-                  <h1>no categories were found</h1>
-                }
                 @endif
 
 
