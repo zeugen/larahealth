@@ -20,6 +20,9 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->timestamps();
+            //setup foreign key constraint - > helpful when deleting user together with posts they have uploaded
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

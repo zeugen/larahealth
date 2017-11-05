@@ -64,8 +64,29 @@
       <ul class="treeview-menu">
         <li><a href="{{route('admin.posts.index')}}"><i class="fa fa-circle-o"></i> All Posts</a></li>
         <li><a href="{{route('admin.posts.create')}}"><i class="fa fa-circle-o"></i> Create Post</a></li>
-        <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
 
+        <li class="treeview">
+          <a href="#"><i class="fa fa-circle-o"></i> Post Categories
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('admin.categories.index')}}"><i class="fa fa-circle-o"></i> Categories</a></li>
+            <li><a href="{{route('admin.categories.create')}}"><i class="fa fa-circle-o"></i> Create Category</a></li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-circle-o"></i> Delete Category
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li class="treeview">
