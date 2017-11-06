@@ -1,83 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Aurora</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" /> --}}
+    <!-- CSS Files -->
+        {{-- <link href="{{asset('css/now-ui-kit.css')}}" rel="stylesheet" /> --}}
+    {{-- bootstrap test --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    {{-- <link href="{{asset('css/demo.css')}}" rel="stylesheet" /> --}}
+    <link href="{{asset('css/app.css')}}" rel="stylesheet" />
 </head>
-<body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+
+<body class="index-page sidebar-collapse">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
         <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="{{ url('/') }}" rel="tooltip" title="For those in pursuit of good health" data-placement="bottom" target="_blank">
+                    Aurora
                 </a>
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
             </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image={{asset('img/blurred-image-1.jpg')}}>
+                <ul class="navbar-nav">
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/') }}">
+                            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                            <p>Home</p>
+                        </a>
 
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/about') }}">
+                            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                            <p>About</p>
+                        </a>
+
+                    </li>
+                    <!-- authentication links -->
+                    @if(Auth::guest())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/login') }}" >
+                            <i class="now-ui-icons files_paper"></i>
+                            <p>Login</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-neutral" href="{{ url('/register') }}" >
+                            <i class="now-ui-icons arrows-1_share-66"></i>
+                            <p>Register</p>
+                        </a>
+                    </li>
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <p>
+                              {{ Auth::user()->name }}
+                            </p>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
+                        </div>
+                    </li>
                     @endif
+
+
+
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- End Navbar -->
 
     @yield('content')
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-    
+    <!--   Core JS Files   -->
+    <script src="{{asset('js/core/jquery.3.2.1.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/core/popper.min.js')}}" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+     <script src="{{asset('/js/plugins/nouislider.min.js')}}" type="text/javascript"></script>
+    <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+    <script src="{{asset('js/plugins/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+    <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+     <script src="{{asset('js/now-ui-kit.js')}}" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+        function scrollToDownload() {
+
+            if ($('.section-download').length != 0) {
+                $("html, body").animate({
+                    scrollTop: $('.section-download').offset().top
+                }, 1000);
+            }
+        }
+    </script>
 </body>
+
+
 </html>

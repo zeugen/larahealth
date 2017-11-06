@@ -18,7 +18,9 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/about', function(){
+  return view('/about');
+});
 
 //test admin route
 Route::get('/admin/',function(){
