@@ -3,7 +3,7 @@
 @section('content')
   <div class="wrapper">
       <div class="page-header clear-filter" filter-color="green">
-          <div class="page-header-image" data-parallax="true" >
+          <div class="page-header-image" data-parallax="true" style="background-image:url(../img/about.jpg)">
           </div>
           <div class="container">
               <div class="content-center brand">
@@ -22,7 +22,7 @@
                       <div class="col-lg-6 col-md-12">
                           <h2 class="title">Your health comes first!</h2>
                           <h5 class="description">
-                              We are a team of many renowned nutritionists, and specialists from various areas of nutrition, fitness with extensive experience. Our mission is We help people everywhere look good, feel good, do good in order to live more fulfilling lives every day.
+                              We are a team of renowned  specialists from various areas of health and fitness with extensive experience. Our mission is We help people everywhere look good, feel good, do good in order to live more fulfilling lives every day.
                           </h5>
                           <!-- <div class="nucleo-container">
             <img src="assets/img/nucleo.svg" alt="">

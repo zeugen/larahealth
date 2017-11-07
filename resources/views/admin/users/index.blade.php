@@ -67,7 +67,7 @@
                   <td>{{$user->id}}</td>
                   <td><a href="{{route('admin.users.edit',$user->id)}}">{{$user->name}}</a></td>
 
-                  <td><img height="50" src="{{$user->photo ? $user->photo->file : url('/img/user/userplaceholder.png')}}" alt="" class="user-image img-rounded img-th-200"></td>
+                  <td><img height="50" src="{{$user->photo ? $user->photo->file : url('/img/user/userplaceholder.png')}}" alt="" class="user-image img-circle img-th-200"></td>
                   <td>{{$user->email}}</td>
                   <td>{{$user->role->name}}</td>
                   <td>

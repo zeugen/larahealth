@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    You are logged in! <h1>users home page that should be accessed after login</h1>
                 </div>
             </div>
         </div>
