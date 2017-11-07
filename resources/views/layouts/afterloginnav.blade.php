@@ -10,19 +10,21 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" /> --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" /> 
     <!-- CSS Files -->
         {{-- <link href="{{asset('css/now-ui-kit.css')}}" rel="stylesheet" /> --}}
     {{-- bootstrap test --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- CSS Janimation libraries -->
+    <link rel="stylesheet" href="{{asset('css/hover-min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
     {{-- <link href="{{asset('css/demo.css')}}" rel="stylesheet" /> --}}
     <link href="{{asset('css/app.css')}}" rel="stylesheet" />
 </head>
 
 <body class="index-page sidebar-collapse">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top  ">
         <div class="container">
             <div class="navbar-translate">
                 <a class="navbar-brand" href="{{ url('/') }}" rel="tooltip" title="For those in pursuit of good health" data-placement="bottom" target="_blank">
@@ -39,15 +41,22 @@
 
                     <li class="nav-item {{Request::is('/') ? "active" :""}}">
                         <a class="nav-link" href="{{ url('/') }}">
-                            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                            <i class="now-ui-icons education_agenda-bookmark"></i>
                             <p>Home</p>
                         </a>
 
                     </li>
                     <li class="nav-item {{Request::is('/about') ? "active" :""}}">
                         <a class="nav-link" href="{{ url('/about') }}">
-                            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-                            <p>About</p>
+                            <i class="now-ui-icons ui-2_chat-round"></i>
+                            <p>Chat</p>
+                        </a>
+
+                    </li>
+                    <li class="nav-item {{Request::is('/about') ? "active" :""}}">
+                        <a class="nav-link" href="{{ url('/about') }}">
+                            <i class="now-ui-icons location_compass-05"></i>
+                            <p>Maps</p>
                         </a>
 
                     </li>
@@ -73,9 +82,9 @@
                             </p>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
+                            <a class="dropdown-item" href="#"><i class="now-ui-icons users_single-02"></i>Profile</a>
+
+                            <a class="dropdown-item" href="{{ url('/logout') }}"><i class="now-ui-icons sport_user-run"></i><p>Logout</p></a>
                         </div>
                     </li>
                     @endif
@@ -100,6 +109,7 @@
     <script src="{{asset('js/plugins/bootstrap-datepicker.js')}}" type="text/javascript"></script>
     <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
      <script src="{{asset('js/now-ui-kit.js')}}" type="text/javascript"></script>
+     <script src="{{asset('js/all.js')}}"></script>
     <script type="text/javascript">
 
 

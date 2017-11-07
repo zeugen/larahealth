@@ -27,8 +27,8 @@
         <small>Control panel</small>
       </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li class="active">Dashboard</li>
+          <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+
         </ol>
       </section>
 
@@ -50,7 +50,7 @@
       <div class="pull-right hidden-xs">
         <b>Version</b> 2.4.0
       </div>
-      <strong>Copyright &copy; 2017 <a href="#">Afyafitness</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; 2017 <a href="#">Aurora</a>.</strong> All rights reserved.
     </footer>
 
   </div>

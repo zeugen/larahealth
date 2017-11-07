@@ -6,3 +6,50 @@
   max-width: 125px;
   max-height: 125px;
 }
+.page-header-image{
+  background-image: url('../img/fitness_tracker.jpg');
+}
+.n-logo{
+  max-width: 150px;
+  max-height: 150px;
+}
+.login-page .card-login{
+  padding-top: 6em;
+}
+.page-header[filter-color="green"] {
+  background: rgba(44, 44, 44, 0.2);
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(83, 196, 25, 0.6));
+  /* Standard syntax */ }
+.body-wrapper{
+  padding-top: 70px;
+}
+
+//featured section at homepage
+section.featured{
+  padding-top: 10em;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+.featured-header>h2{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  padding-bottom: 5px;
+  position: relative;
+}
+.featured-header>h2::before{
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1%;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid white;
+}
+article.featured-article{
+  padding-bottom: 2em;
+}
+//get affix to work for the sidebars

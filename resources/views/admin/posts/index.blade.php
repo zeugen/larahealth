@@ -79,6 +79,9 @@
 
               @endif
             </table>
+            <div class="box-body text-center">
+              {!! $posts->links();!!}
+            </div>
           </div>
         </div>
         </div>

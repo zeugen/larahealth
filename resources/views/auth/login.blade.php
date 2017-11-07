@@ -38,10 +38,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image={{asset('img/blurred-image-1.jpg')}}>
                 <ul class="navbar-nav">
 
-                    <li class="nav-item">
+                    <li class="nav-item {{Request::is('/register') ? "active" :""}}">
                         <a class="nav-link" href="{{ url('/register') }}">Create an account</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{Request::is('/') ? "active" :""}}">
                         <a class="nav-link" rel="tooltip" title="Go to the home page" data-placement="bottom" href="{{url('/')}}">
                             <i class="fa fa-home"></i>
                             <p class="d-lg-none d-xl-none">Home</p>

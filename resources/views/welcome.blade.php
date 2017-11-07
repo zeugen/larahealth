@@ -65,12 +65,12 @@
               <nav>
                   <ul>
                       <li>
-                          <a href="#">
+                          <a href="/home">
                               Aurora
                           </a>
                       </li>
                       <li>
-                          <a href="#">
+                          <a href="/about">
                               About Us
                           </a>
                       </li>

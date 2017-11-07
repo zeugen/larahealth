@@ -3,7 +3,7 @@
   <!-- Sidebar user panel -->
   <div class="user-panel">
     <div class="pull-left image">
-      <img src="{{ asset("/img/admin_128.jpg")}}" class="user-image" alt="User Image">
+      <img src="{{Auth::user()->photo->file}}" class="user-image" alt="User Image">
     </div>
     <div class="pull-left info">
       <p>{{Auth::user()->name}}</p>
@@ -13,22 +13,26 @@
 
   <!-- sidebar menu: : style can be found in sidebar.less -->
   <ul class="sidebar-menu" data-widget="tree">
-    <li class="header">MAIN NAVIGATION</li>
-    <li class="active treeview">
+    <li class="header"><i class="fa fa-dashboard"></i> <span>Dashboard</span></li>
+    <li class="treeview {{Request::is('admin/users') ? "active" :""}} ">
       <a href="#">
-      <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+      <i class="fa fa-users"></i>
+      <span>View Home Page</span>
       <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
       </span>
     </a>
       <ul class="treeview-menu">
-        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-        <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        <li><a href="{{url('/home')}}"><i class="fa fa-circle-o"></i> Aurora</a></li>
+
+
+
       </ul>
     </li>
 
 
-    <li class="treeview">
+
+    <li class="treeview {{Request::is('admin/users') ? "active" :""}} ">
       <a href="#">
       <i class="fa fa-users"></i>
       <span>App Users</span>
@@ -43,7 +47,7 @@
 
       </ul>
     </li>
-    <li class="treeview">
+    <li class="treeview {{Request::is('admin/posts') ? "active" :""}}">
       <a href="#">
       <i class="fa fa-book"></i>
       <span>Posts</span>
@@ -52,29 +56,18 @@
       </span>
     </a>
       <ul class="treeview-menu">
-        <li><a href="{{route('admin.posts.index')}}"><i class="fa fa-circle-o"></i> All Posts</a></li>
+        <li class=""><a href="{{route('admin.posts.index')}}"><i class="fa fa-circle-o"></i> All Posts</a></li>
         <li><a href="{{route('admin.posts.create')}}"><i class="fa fa-circle-o"></i> Create Post</a></li>
 
-        <li class="treeview">
+        <li class="treeview {{Request::is('admin/categories') ? "active" :""}}">
           <a href="#"><i class="fa fa-circle-o"></i> Post Categories
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
-          <ul class="treeview-menu">
+          <ul class="treeview-menu ">
             <li><a href="{{route('admin.categories.index')}}"><i class="fa fa-circle-o"></i> Categories</a></li>
-            <li><a href="{{route('admin.categories.create')}}"><i class="fa fa-circle-o"></i> Create Category</a></li>
-            <li class="treeview">
-              <a href="#"><i class="fa fa-circle-o"></i> Delete Category
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-              </ul>
-            </li>
+
           </ul>
         </li>
       </ul>
